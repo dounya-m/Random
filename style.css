@@ -1,0 +1,29 @@
+
+
+
+body{
+    background-color: aliceblue;
+}
+.header_titele{
+    font-size: 3.6rem;
+    font-weight: 700;
+    color: rgb(0, 0, 153);
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.list_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.heder_main_section{
+    margin-top: 15rem;
+    display: flex;
+    justify-content:  space-evenly;
+    align-items: center;
+}
+

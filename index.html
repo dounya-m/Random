@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="src/input.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="calendar.cssss">
+    <script src="sweetalert2.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class=" relative mb-[4rem]">
+        <nav class="mt-6">
+            <img class="w-[12rem]" src="source/logo-youcode-ma.png" alt="">
+        </nav>
+        <section class="heder_main_section">
+            <div class="w-2/6">
+                <h1 class=" capitalize header_titele">gérer vos sujets de veille</h1>
+                <h3 class="subtitle">Lorem ipsum dolor </h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero doloremque dolores beatae dolorem adipisci nulla, quam error velit est qui, distinctio et voluptatum. At rerum voluptatem aut consequuntur, quae maxime. </p>
+            </div>
+
+            <div class="relative w-2/6">
+                <img class="w-[15rem] absolute ml-[15rem] -mt-[5rem]" src="./source/Saly-42.png" alt="">
+                <img class="w-[20rem]" src="./source/Saly-26.png" alt="">
+            </div>
+
+        </section>
+    </header>
+
+    <main>
+
+        <section class="thematique">
+            <h2 class=" capitalize text-3xl font-semibold text-blue-900 text-center my-10 ">Entrer mes thématique</h2>
+
+            <div class="flex justify-evenly items-start">
+                <div class="flex flex-col mt-7 gap-3 justify-center items-end">
+                    <input  type="text" id="theme_input" class="them_input w-[20rem] p-2 h-[3rem] bg-transparent border-b-2" placeholder="Theématique...">
+                    <button onclick="pushThem()" class="text-white bg-blue-700  p-2 rounded-lg" id="submit_them">Submit</button>
+                </div>
+                <div class=" bg-white w-[30rem] p-2 h-[35rem] overflow-auto border-2 border-gray-100">
+                    <p class="them_result text-lg my-5" id="output_item" ></p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class=" capitalize text-3xl font-semibold text-blue-900 text-center my-10 ">Entrer la listes des aprenants</h2>
+            <div class="flex justify-evenly items-start">
+                <div class="flex flex-col mt-7 gap-3 justify-center items-end">
+                    <input  type="text" id="input_student" class="them_input w-[20rem] p-2 h-[3rem] bg-transparent border-b-2" placeholder="Theématique...">
+                    <button onclick="pushStudent()" class="text-white bg-blue-700  p-2 rounded-lg" id="submit_them">Submit</button>
+                </div>
+                <div class=" bg-white w-[30rem] p-2 h-[35rem] overflow-auto border-2 border-gray-100">
+                    <p class="them_result text-lg my-5" id="output_student" ></p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2 class=" capitalize text-3xl font-semibold text-blue-900 text-center my-10 ">Let's Play</h2>
+            <div class="flex flex-col  justify-center items-center gap-10 my-10">
+                <h2 class="text-5xl" id="reandom_result">resulte</h2>
+                <button class=" bg-blue-600 p-2 rounded-lg text-white" id="btnrandom">Random</button>
+                <div class=" bg-white w-[30rem] p-2 h-[35rem] overflow-auto border-2 border-gray-100">
+                    <p class="them_result text-lg my-5" id="random_list" ></p>
+                </div>
+            </div>
+
+        </section>
+        <div class=" bg-white w-[30rem] p-2 h-[35rem] overflow-auto border-2 border-gray-100">
+            <p class="them_result text-lg my-5" id="fina_results" ></p>
+        </div>
+
+    </main>
+
+
+
+    <script src="script.js"></script>
+    <script src="student.js"></script>
+    
+</body>
+</html>
