@@ -3,14 +3,7 @@
 let outputItem = document.getElementById('output_item');
 
 var themArray = [];
-var timeArray = [""];
-
-const date = new Date();
-
-date.setDate(date.getDate() + 7);
-
-// 👇️ Sat Mar 05 2022
-console.log(date);
+let datsubject = document.getElementById('datsubject')
 
 
 function pushThem(){
@@ -29,6 +22,7 @@ function pushThem(){
 }
 //Cree une liste des aprenant list
 let outputStudent = document.getElementById('output_student');
+// let outputStudent = document.getElementById('output_student');
 
 var studentArray = [];
 
@@ -48,6 +42,19 @@ function pushStudent(){
 
 
 }
+//date function
+let counter = 0
+let d = moment().format("YYYY-MM-DD");
+
+function skippingWekeend(date, days) {
+    let d = moment(new Date(date)).add(Math.floor(days / 5) * 7, "d");
+    let remaining = days % 5;
+    while (remaining) {
+        d.add(1, "d");
+        if (d.day() !== 0 && d.day() !== 6) remaining--;
+        }
+        return d.format("YYYY-MM-DD");
+    }
 
 //Random Student
 
@@ -77,20 +84,24 @@ btnRandom.addEventListener('click', () => {
     var leng = "";
     for(j=0; j<resultsArray.length; j++){
         
-        leng += resultsArray[j] + "</br>"
+        leng += resultsArray[j]  + "</br>"
     }
-    list.innerHTML = leng
+    list.innerHTML = leng 
 
-
-        
+//call days function
+    var daysArray = []
+        var day = skippingWekeend(d, counter++)
 
 //random list
         var st = ""
         for(i=0; i<users.length; i++){
 
-            st +=  users[i] +  "</br>"
+            st +=  users[i]  + "</br>" 
         }
-        outputStudent.innerHTML = st
+        var dayeS = "" 
+        dayeS += day + "</br>"
+        outputStudent.innerHTML = st 
+        datsubject.innerHTML += dayeS
 
 //retire de la liste des aprenant
         const indecValue = studentArray.indexOf(result.innerHTML);
@@ -137,5 +148,23 @@ btnRandom.addEventListener('click', () => {
 
 // const merge = themArray.concat(resultsArray)
 // console.log(merge)
+
+//date
+
+
+function Export() {
+    html2canvas(document.getElementById('table2'), {
+        onrendered: function (canvas) {
+            var data = canvas.toDataURL();
+            var docDefinition = {
+                content: [{
+                    image: data,
+                    width: 500
+                }]
+            };
+            pdfMake.createPdf(docDefinition).download("HtmlToPdf.pdf");
+        }
+    });
+  }
 
 
