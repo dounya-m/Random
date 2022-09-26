@@ -38,11 +38,11 @@
             
             <div class="flex justify-evenly">
                 <section class="thematique">
-                    <h2 class="my-4 text-3xl font-semibold text-left text-white capitalize ">Entrer mes thématique</h2>
                     <div class="flex flex-col items-start gap-5 justify-evenly">
-                        <div class="flex gap-3 mt-7">
-                            <input id="theme_input"  type="text"  class="them_input w-[20rem] p-2 h-[3rem] bg-transparent border-b-2" placeholder="Theématique...">
-                            <button onclick="pushThem()"  class="p-2 text-white border-2 border-white rounded-lg" id="submit_them">Submit</button>
+                        <div class="relative flex gap-3 p-2 border-2 border-gray-500 rounded-lg mt-7">
+                            <input id="theme_input"  type="text"  class="them_input w-[20rem] p-2 h-[3rem] bg-transparent " placeholder="Theématique...">
+                            <button onclick="pushThem()" id="submit_them"  
+                            class="absolute p-2 mt-12 ml-32 bg-white border-2 border-white rounded-lg text-slate-600" >Submit </button>
                         </div>
         
                     </div>
@@ -50,13 +50,13 @@
         
             </div>
             <section class="random">
-                <div class="flex flex-col items-center justify-center gap-10 my-10">
+                <div class="flex flex-col items-center justify-center gap-10 my-24 ">
                     <h2 class="text-5xl" id="reandom_result">resulte</h2>
-                    <button class="p-2 text-white bg-blue-600 rounded-lg " id="btnrandom">Random</button>
+                    <button class="flex p-2 text-xl text-white border-2 rounded-lg" id="btnrandom">Random</button>
                 </div>
             </section>
-            <section class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <section class="relative overflow-x-auto sm:rounded-lg">
+                <table id="table" class="w-full text-sm text-left text-gray-500 shadow-md dark:text-gray-900 ">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3">
@@ -72,22 +72,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                        <tr class="py-10 text-white bg-gray-800 border-b border-gray-700 hover:bg-gray-600">
                             <th 
                             id="output_item" 
-                            scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            
+                            class="px-6 py-10 font-medium text-gray-100 whitespace-nowrap dark:text-white">
                             </th>
-                            <td id="random_list" class="px-6 py-4">
+                            <td id="random_list" class="px-6 py-10">
                                 
                             </td>
-                            <td id="datsubject" class="px-6 py-4">
+                            <td id="datsubject" class="px-6 py-10">
                                 
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <button id="btnExportToCsv"
-                onclick="Export()">export</button>
+                <button id="btnExportToCsv" class="flex items-end justify-end my-10 text-xl font-semibold" 
+                onclick="Export()"> <img class="w-[2rem]" src="./source/icons8-export-pdf-80.png" alt="">export</button>
             </section>
         </div>
  

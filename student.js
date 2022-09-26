@@ -151,9 +151,9 @@ btnRandom.addEventListener('click', () => {
 
 //date
 
-
+// let table = document.getElementById('table')
 function Export() {
-    html2canvas(document.getElementById('table2'), {
+    html2canvas(document.getElementById('table'), {
         onrendered: function (canvas) {
             var data = canvas.toDataURL();
             var docDefinition = {
